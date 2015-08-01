@@ -11,4 +11,10 @@ describe('ToDoListAddController', function(){
     expect(ctrl.inputTask).toBeUndefined();
   });
 
+  it('initialises with an empty task list',function(){
+    expect(ctrl.taskList).toBeUndefined();
+  });
+
+  
+
 });
