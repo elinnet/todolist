@@ -10,7 +10,6 @@ taskList.controller('ToDoListAddController', [function() {
         {"item": "do banking"}
       ]
     };
-
+    console.log(self.inputTask);
   };
-
 }]);
