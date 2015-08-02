@@ -28,8 +28,9 @@ describe('ToDoListAddController', function(){
 
     it('task has a completed status of true', function(){
       ctrl.inputTask = 'do laundry';
+      ctrl.addTask();
       ctrl.completeItem('do laundry');
-      exepct(ctrl.taskList[0].completed).toEqual('true');
+      expect(ctrl.taskList[0].completed).toEqual(true);
     });
   });
 

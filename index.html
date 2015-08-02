@@ -16,10 +16,10 @@
   </head>
   <h1>To Do List</h1>
   <body ng-controller="ToDoListAddController as listCtrl">
-      <ul class="list-group" ng-repeat="tasks in listCtrl.taskList">
+      <ul class="list-group" ng-repeat="tasks in listCtrl.taskList | filter: taskStatus">
         <li>
           <span><a href="#" class='items' editable-text="tasks.task" ng-style="myStyle">{{tasks.task}}</a></span>
-          <input type="checkbox" ng-model='task.status' ng-true-value="'Task Completed'" ng-false-value="" ng-click="listCtrl.completeItem(tasks.task)"/>
+          <input id="completedItem" type="checkbox" ng-model='task.status' ng-true-value="'Task Completed'" ng-false-value="" ng-click="listCtrl.completeItem(tasks.task)"/>
           <p>{{task.status}}</p>
         </li>
       </ul>
@@ -30,9 +30,9 @@
     </form>
 
     <ul>
-      <button>All Tasks</button>
-      <button>Completed Tasks</button>
-      <button>Active Tasks</button>
+      <button ng-click="taskStatus = {completed: }">All Tasks</button>
+      <button ng-click="taskStatus = {completed: true}">Completed Tasks</button>
+      <button ng-click="taskStatus = {completed: false}">Active Tasks</button>
 
     </ul>
 

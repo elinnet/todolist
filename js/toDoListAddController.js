@@ -13,19 +13,29 @@ taskList.controller('ToDoListAddController', [function() {
      self.taskList = [];
     }
 
-    var item = {"task": self.inputTask, "completed": "false"};
+    var item = {task: self.inputTask, completed: false};
 
     self.taskList.push(item);
+
+    console.log(self.taskList);
 
   };
 
   self.completeItem = function(task){ //how can I see the value from this?
+
     for (i=0; i < self.taskList.length; i++){
       if (self.taskList[i].task === task){
         // self.taskList[i].completed = !(self.taskList[i].completed);
         self.taskList[i].completed = true;
+        console.log(self.taskList[i]);
       }
     }
+    console.log('test');
+  };
+
+  self.completedTask = function(){
+
+
   };
 
 }]);
