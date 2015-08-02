@@ -2,18 +2,17 @@ taskList.controller('ToDoListAddController', [function() {
 
   var self=this;
 
-  self.taskList = [];
+  // self.taskList = [];
 
   self.addTask = function(){
 
-    var item = {"task": self.inputTask}; //save the input task as a variable 'item'
+    if (self.taskList === undefined) {
+     self.taskList = [];
+    }
 
-    console.log(item);
-
-    console.log(self.taskList.push(item));
+    var item = {"task": self.inputTask};
 
     self.taskList.push(item);
-
 
   };
 
