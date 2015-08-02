@@ -18,7 +18,9 @@
   <body ng-controller="ToDoListAddController as listCtrl">
       <ul class="list-group" ng-repeat="tasks in listCtrl.taskList">
         <li>
-          <a href="#" class='items' editable-text="tasks.task">{{tasks.task}}</a>
+          <span><a href="#" class='items' editable-text="tasks.task" ng-style="myStyle">{{tasks.task}}</a></span>
+          <input type="checkbox" ng-model='task.status' ng-true-value="'Task Completed'" ng-false-value=""/>
+          <p>{{task.status}}</p>
         </li>
       </ul>
 

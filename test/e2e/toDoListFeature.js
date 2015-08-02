@@ -1,8 +1,7 @@
 describe('To Do List', function() {
 
   var listItems = element.all(by.repeater('tasks in listCtrl.taskList'));
-
-
+  var colourSpan = element(by.css('span'));
 
   beforeEach(function(){
     browser.get('http://localhost:8080');
@@ -25,6 +24,15 @@ describe('To Do List', function() {
     element(by.model('$data')).sendKeys(' tomorrow');
     element(by.buttonText('save')).click();
     expect(listItems.get(0).getText()).toBe('wash car tomorrow');
+  });
+
+  it('allows tasks to be marked as completed', function(){
+    var value = element(by.binding('task.status'));
+
+    element(by.model('listCtrl.inputTask')).sendKeys('wash car');
+    element(by.id('submit')).click();
+    element(by.model('task.status')).click();
+    expect(value.getText()).toContain('Task Completed');
   });
 
 });
