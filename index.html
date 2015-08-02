@@ -30,11 +30,11 @@
     </form>
 
     <ul>
-      <button ng-click="taskStatus = {completed: }">All Tasks</button>
+      <button ng-click="taskStatus = {completed: undefined}">All Tasks</button>
       <button ng-click="taskStatus = {completed: true}">Completed Tasks</button>
       <button ng-click="taskStatus = {completed: false}">Active Tasks</button>
-
     </ul>
+    <p id='taskCount'>Total tasks: {{listCtrl.taskList.length}}</p>
 
   </body>
 </html>

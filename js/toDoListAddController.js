@@ -19,6 +19,8 @@ taskList.controller('ToDoListAddController', [function() {
 
     console.log(self.taskList);
 
+    console.log(self.taskList.length);
+
   };
 
   self.completeItem = function(task){ //how can I see the value from this?

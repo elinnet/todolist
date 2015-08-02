@@ -47,4 +47,12 @@ describe('To Do List', function() {
     expect(listItems.get(0).getText()).toBe('do laundry');
   });
 
+ it('counts total number of tasks', function(){
+   element(by.model('listCtrl.inputTask')).sendKeys('wash car');
+   element(by.id('submit')).click();
+   element(by.model('listCtrl.inputTask')).sendKeys('do laundry');
+   element(by.id('submit')).click();
+   element(listItems.length).toBe(2);
+ });
+
 });
