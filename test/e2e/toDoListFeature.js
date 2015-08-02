@@ -1,5 +1,9 @@
 describe('To Do List', function() {
 
+  var listItems = element.all(by.repeater('tasks in listCtrl.taskList'));
+
+
+
   beforeEach(function(){
     browser.get('http://localhost:8080');
   });
@@ -9,9 +13,9 @@ describe('To Do List', function() {
   });
 
   it('displays a newly input task', function(){
-    element(by.model('inputBox')).sendKeys('do laundry');
+    element(by.model('listCtrl.inputTask')).sendKeys('wash car');
     element(by.id('submit')).click();
-    expect(element(by.binding('tasks.item')).getText()).toEqual('do laundry');
+    expect(listItems.get(0).getText()).toBe('wash car');
   });
 
 });

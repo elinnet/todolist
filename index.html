@@ -16,7 +16,7 @@
   <body ng-controller="ToDoListAddController as listCtrl">
       <ul class="list-group" ng-repeat="tasks in listCtrl.taskList.task">
         <li>
-          <p ng-bind="tasks.item"></p>
+          <p ng-bind="tasks.task">{{tasks.task}}</p>
         </li>
       </ul>
 
