@@ -18,4 +18,13 @@ describe('To Do List', function() {
     expect(listItems.get(0).getText()).toBe('wash car');
   });
 
+  it('allows task descriptions to be edited', function(){
+    element(by.model('listCtrl.inputTask')).sendKeys('wash car');
+    element(by.id('submit')).click();
+    element(by.className('items')).click();
+    element(by.model('$data')).sendKeys(' tomorrow');
+    element(by.buttonText('save')).click();
+    expect(listItems.get(0).getText()).toBe('wash car tomorrow');
+  });
+
 });
