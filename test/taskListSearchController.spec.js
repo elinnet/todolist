@@ -23,4 +23,14 @@ describe('ToDoListAddController', function(){
       expect(ctrl.taskList[0].task).toEqual('laundry');
     });
   });
+
+  describe('when user marks task as completed', function(){
+
+    it('task has a completed status of true', function(){
+      ctrl.inputTask = 'do laundry';
+      ctrl.completeItem('do laundry');
+      exepct(ctrl.taskList[0].completed).toEqual('true');
+    });
+  });
+
 });

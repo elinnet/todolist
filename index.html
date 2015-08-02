@@ -19,7 +19,7 @@
       <ul class="list-group" ng-repeat="tasks in listCtrl.taskList">
         <li>
           <span><a href="#" class='items' editable-text="tasks.task" ng-style="myStyle">{{tasks.task}}</a></span>
-          <input type="checkbox" ng-model='task.status' ng-true-value="'Task Completed'" ng-false-value=""/>
+          <input type="checkbox" ng-model='task.status' ng-true-value="'Task Completed'" ng-false-value="" ng-click="listCtrl.completeItem(tasks.task)"/>
           <p>{{task.status}}</p>
         </li>
       </ul>
@@ -28,6 +28,13 @@
       <input type="text" ng-model="listCtrl.inputTask">
       <button class='btn' id="submit" ng-click="listCtrl.addTask()">Submit</button>
     </form>
+
+    <ul>
+      <button>All Tasks</button>
+      <button>Completed Tasks</button>
+      <button>Active Tasks</button>
+
+    </ul>
 
   </body>
 </html>

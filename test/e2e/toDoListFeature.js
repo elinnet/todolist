@@ -3,6 +3,7 @@ describe('To Do List', function() {
   var listItems = element.all(by.repeater('tasks in listCtrl.taskList'));
   var colourSpan = element(by.css('span'));
 
+
   beforeEach(function(){
     browser.get('http://localhost:8080');
   });
@@ -34,5 +35,16 @@ describe('To Do List', function() {
     element(by.model('task.status')).click();
     expect(value.getText()).toContain('Task Completed');
   });
+
+  it('allows me to filter tasks by Completed status', function(){
+    element(by.model('listCtrl.inputTask')).sendKeys('wash car');
+    element(by.id('submit')).click();
+    element(by.model('listCtrl.inputTask')).sendKeys('do laundry');
+    element(by.id('submit')).click();
+    element(by.model('task.status')).click(); //marks as completed
+    element(by.buttonText('Completed Tasks')).click();
+    expect(listItems.get(0).getText()).toBe('do laundry');
+  });
+
 
 });
