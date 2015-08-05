@@ -37,7 +37,7 @@ describe('To Do List', function() {
   });
 
 //DON'T UNDERSTAND WHY THIS WILL NOT PASS.  HELP ON DEBUGGING.
-  xit('allows me to filter tasks by Completed status', function(){
+  it('allows me to filter tasks by Completed status', function(){
     element(by.model('listCtrl.inputTask')).sendKeys('wash car');
     element(by.id('submit')).click();
     element(by.model('listCtrl.inputTask')).sendKeys('do laundry');
@@ -52,7 +52,7 @@ describe('To Do List', function() {
    element(by.id('submit')).click();
    element(by.model('listCtrl.inputTask')).sendKeys('do laundry');
    element(by.id('submit')).click();
-   expect(by.id('user_name'))).toBe(2); // array of tems
+   expect(by.id('user_name')).toBe(2); // array of tems
  });
 
 });
