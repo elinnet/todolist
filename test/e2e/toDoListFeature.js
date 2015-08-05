@@ -52,7 +52,7 @@ describe('To Do List', function() {
    element(by.id('submit')).click();
    element(by.model('listCtrl.inputTask')).sendKeys('do laundry');
    element(by.id('submit')).click();
-   element(listItems.length).toBe(2);
+   expect(by.id('user_name'))).toBe(2); // array of tems
  });
 
 });
